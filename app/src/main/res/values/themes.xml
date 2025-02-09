@@ -13,8 +13,8 @@
         <item name="colorOnBackground">#000000</item>
         <item name="colorSurface">#FFFFFF</item>
         <item name="colorOnSurface">#000000</item>
-        <item name="android:windowBackground">#FFFFFF</item>
         <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@drawable/bg_window</item>
     </style>
 
     <style name="Theme.FillLight" parent="Base.Theme.FillLight" />
