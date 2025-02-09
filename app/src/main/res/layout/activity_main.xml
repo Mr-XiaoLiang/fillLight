@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/backgroundView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="#3F00" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mainGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:id="@+id/hueBar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.lollipop.light.HueBar
+                android:id="@+id/hueSlider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <com.lollipop.light.ThumbView
+                android:id="@+id/hueThumb"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#F00"
+                android:padding="12dp"
+                android:src="@drawable/baseline_color_lens_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/brightnessSlider"
+                app:thumbBorderColor="#BFFF"
+                app:thumbBorderWidth="4dp"
+                app:tint="#FFF"
+                tools:translationX="120dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/brightnessBar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/hueBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.lollipop.light.RoundImageView
+                android:id="@+id/brightnessSlider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_brightness" />
+
+            <com.lollipop.light.ThumbView
+                android:id="@+id/brightnessThumb"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#666"
+                android:padding="12dp"
+                android:src="@drawable/baseline_light_mode_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/brightnessSlider"
+                app:thumbBorderColor="#BFFF"
+                app:thumbBorderWidth="4dp"
+                app:tint="#FFF"
+                tools:translationX="120dp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/saturationBar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/brightnessBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.lollipop.light.RoundImageView
+                android:id="@+id/saturationSlider"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_saturation" />
+
+            <com.lollipop.light.ThumbView
+                android:id="@+id/saturationThumb"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="#666"
+                android:padding="12dp"
+                android:src="@drawable/baseline_invert_colors_24"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/brightnessSlider"
+                app:thumbBorderColor="#BFFF"
+                app:thumbBorderWidth="4dp"
+                app:tint="#FFF"
+                tools:translationX="120dp" />
+
+        </FrameLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/colorHistoryGroup"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:layout_marginBottom="10dp"
+            android:clipToPadding="false"
+            android:paddingHorizontal="15dp"
+            android:paddingTop="30dp"
+            app:layout_constraintBottom_toTopOf="@id/saturationBar" />
+
+        <com.lollipop.light.RoundImageView
+            android:id="@+id/pinButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:background="#FFF"
+            android:padding="12dp"
+            android:src="@drawable/baseline_push_pin_24"
+            app:layout_constraintBottom_toTopOf="@id/colorHistoryGroup"
+            app:layout_constraintEnd_toEndOf="@id/saturationBar"
+            app:tint="?attr/colorPrimary" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
