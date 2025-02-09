@@ -14,7 +14,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:background="#3F00" />
+        tools:background="#ED9B9B" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/mainGroup"
@@ -24,9 +24,11 @@
         <FrameLayout
             android:id="@+id/hueBar"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="16dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:clipToPadding="false"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -34,13 +36,14 @@
             <com.lollipop.light.HueBar
                 android:id="@+id/hueSlider"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="48dp" />
 
             <com.lollipop.light.ThumbView
                 android:id="@+id/hueThumb"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="#F00"
+                android:elevation="2dp"
                 android:padding="12dp"
                 android:src="@drawable/baseline_color_lens_24"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -55,9 +58,10 @@
         <FrameLayout
             android:id="@+id/brightnessBar"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
             app:layout_constraintBottom_toTopOf="@+id/hueBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -65,7 +69,7 @@
             <com.lollipop.light.RoundImageView
                 android:id="@+id/brightnessSlider"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="48dp"
                 android:background="@drawable/bg_brightness" />
 
             <com.lollipop.light.ThumbView
@@ -73,6 +77,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="#666"
+                android:elevation="2dp"
                 android:padding="12dp"
                 android:src="@drawable/baseline_light_mode_24"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -87,9 +92,10 @@
         <FrameLayout
             android:id="@+id/saturationBar"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:layout_marginHorizontal="20dp"
-            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
             app:layout_constraintBottom_toTopOf="@+id/brightnessBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
@@ -97,7 +103,7 @@
             <com.lollipop.light.RoundImageView
                 android:id="@+id/saturationSlider"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="48dp"
                 android:background="@drawable/bg_saturation" />
 
             <com.lollipop.light.ThumbView
@@ -105,6 +111,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:background="#666"
+                android:elevation="2dp"
                 android:padding="12dp"
                 android:src="@drawable/baseline_invert_colors_24"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -130,13 +137,13 @@
             android:id="@+id/pinButton"
             android:layout_width="48dp"
             android:layout_height="48dp"
+            android:layout_marginHorizontal="20dp"
             android:layout_marginBottom="10dp"
             android:background="#FFF"
-            android:padding="12dp"
-            android:src="@drawable/baseline_push_pin_24"
+            android:elevation="2dp"
+            android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintBottom_toTopOf="@id/colorHistoryGroup"
-            app:layout_constraintEnd_toEndOf="@id/saturationBar"
-            app:tint="?attr/colorPrimary" />
+            app:layout_constraintEnd_toEndOf="@id/saturationBar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

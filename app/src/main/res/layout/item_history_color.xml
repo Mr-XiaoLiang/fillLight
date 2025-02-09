@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="52dp"
+    android:clipToPadding="false"
     android:paddingHorizontal="5dp"
     tools:background="#3f00">
 
     <com.lollipop.light.RoundImageView
-        android:id="@+id/colorView"
+        android:id="@+id/backgroundView"
         android:layout_width="64dp"
         android:layout_height="42dp"
         android:layout_gravity="center"
-        android:background="#666"
-        android:padding="12dp"
-        app:thumbBorderColor="#BFFF"
-        app:thumbBorderWidth="4dp" />
+        android:elevation="2dp"
+        android:src="#DFFF" />
+
+    <com.lollipop.light.RoundImageView
+        android:id="@+id/colorView"
+        android:layout_width="58dp"
+        android:layout_height="36dp"
+        android:layout_gravity="center"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:elevation="2dp"
+        tools:src="#66B35C" />
 
 </FrameLayout>

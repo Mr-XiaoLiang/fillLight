@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     private val hueSliderHelper by lazy {
         SliderHelper(
-            group = binding.hueBar,
+            group = binding.hueSlider,
             thumb = binding.hueThumb,
             onProgressChanged = ::onHueChanged
         )
@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
 
     private val saturationSliderHelper by lazy {
         SliderHelper(
-            group = binding.saturationBar,
+            group = binding.saturationSlider,
             thumb = binding.saturationThumb,
             onProgressChanged = ::onSaturationChanged
         )
@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
 
     private val brightnessSliderHelper by lazy {
         SliderHelper(
-            group = binding.brightnessBar,
+            group = binding.brightnessSlider,
             thumb = binding.brightnessThumb,
             onProgressChanged = ::onBrightnessChanged
         )
