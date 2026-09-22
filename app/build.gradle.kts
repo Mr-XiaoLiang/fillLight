@@ -1,11 +1,12 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     alias(libs.plugins.android.application)
-    alias(libs.plugins.kotlin.android)
 }
 
 android {
     namespace = "com.lollipop.light"
-    compileSdk = 35
+    compileSdk = 37
 
     buildFeatures {
         viewBinding = true
@@ -14,14 +15,15 @@ android {
     defaultConfig {
         applicationId = "com.lollipop.light"
         minSdk = 24
-        targetSdk = 35
-        versionCode = 1_00_00
-        versionName = "1.0.0"
+        targetSdk = 37
+        versionCode = 1_01_00
+        versionName = "1.1.0"
     }
 
     buildTypes {
         release {
             isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -32,8 +34,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = "11"
+}
+
+// AGP 9 起 Kotlin 支持内置，由 android 插件自带，不再应用 org.jetbrains.kotlin.android
+kotlin {
+    compilerOptions {
+        jvmTarget = JvmTarget.JVM_11
     }
 }
 
