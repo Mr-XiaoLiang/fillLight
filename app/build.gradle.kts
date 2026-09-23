@@ -16,8 +16,8 @@ android {
         applicationId = "com.lollipop.light"
         minSdk = 24
         targetSdk = 37
-        versionCode = 1_01_00
-        versionName = "1.1.0"
+        versionCode = 1_02_00
+        versionName = "1.2.0"
     }
 
     buildTypes {
